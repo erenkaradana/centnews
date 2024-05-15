@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.tudio.appcentnews.ui.fragments.FavouritesFragment"
+        android:label="FavouritesFragment" >
+        <action
+            android:id="@+id/action_favouritesFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.tudio.appcentnews.ui.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.tudio.appcentnews.ui.fragments.NewsFragment"
+        android:label="ArticleFragment">
+
+        <argument
+            android:name="article"
+            app:argType="com.tudio.appcentnews.models.Article"/>
+        <action
+            android:id="@+id/action_articleFragment_to_sourceFragment"
+            app:destination="@id/sourceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sourceFragment"
+        android:name="com.tudio.appcentnews.ui.fragments.NewsSourceFragment"
+        android:label="fragment_source"
+        tools:layout="@layout/fragment_source">
+
+        <argument
+            android:name="articleUrl"
+            app:argType="com.tudio.appcentnews.models.Article"/>
+    </fragment>
+</navigation>

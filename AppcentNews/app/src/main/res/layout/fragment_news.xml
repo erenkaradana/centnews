@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/articleImage2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintBottom_toTopOf="@+id/qwe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16sp"
+        android:id="@+id/qwe"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@id/articleImage2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/articleTitle2"
+            android:background="@color/custom_blue_2"
+
+            />
+
+        <TextView
+            android:id="@+id/articleTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/line"
+            android:layout_marginStart="15sp"
+            android:ellipsize="end"
+            android:fontFamily="@font/voguella"
+            android:maxLines="5"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/qwe">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/custom_blue"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <ImageView
+                    android:id="@+id/authorIcon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    app:tint="@color/white"
+                    android:src="@drawable/author_icon"
+                    android:layout_centerVertical="true" />
+
+                <TextView
+                    android:id="@+id/articleSource2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/authorIcon"
+                    android:layout_marginStart="8dp"
+                    android:text="Author"
+                    android:maxLines="1"
+                    android:maxLength="30"
+                    android:fontFamily="@font/rubik"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:cardBackgroundColor="@color/custom_blue"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp">
+
+                <TextView
+                    android:id="@+id/articleDateTime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:maxLength="10"
+                    android:fontFamily="@font/rubik"
+                    android:textSize="11sp"
+                    android:textColor="@color/white"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+</RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <TextView
+            android:id="@+id/articleDescription2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubik"
+            android:ellipsize="end"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="insideOverlay"
+            android:text="text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/articleImage2"
+        app:layout_constraintBottom_toBottomOf="@id/articleImage2"
+        android:layout_marginBottom="-20dp"
+        android:layout_marginEnd="16sp"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="#FEFEFE"
+            android:src="@drawable/baseline_favorite_24"
+            app:elevation="1dp"
+            app:fabCustomSize="48dp"
+            app:fabSize="normal"
+            app:maxImageSize="20dp"
+            app:tint="@color/custom_blue" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/custom_blue"
+            app:tint="@color/white"
+            app:elevation="1dp"
+            android:src="@drawable/share_icon"
+            app:fabSize="normal"
+            app:fabCustomSize="48dp"
+            app:maxImageSize="20dp"
+            />
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/goToSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="32dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="go to news source"
+                android:fontFamily="@font/voguella"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                android:layout_marginEnd="4dp" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                android:rotation="180"
+                android:scaleType="center"
+                android:layout_gravity="center_vertical"
+                app:tint="@color/black" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        app:elevation="0dp"
+        app:tint="#FEFEFEFE"
+        android:src="@drawable/baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
